@@ -8,10 +8,16 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag "application" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="bg-gradient-to-r from-green-400 to-blue-500">
+      <div class="lg:container lg:mx-auto h-24 mb-8 flex items-center">
+        <div class="text-3xl font-semibold text-white">SWSF Online</div>
+      </div>
+    </div>
+    <div class="lg:container lg:mx-auto">
+      <%= yield %>
+    </div>
   </body>
 </html>
