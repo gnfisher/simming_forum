@@ -10,13 +10,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="bg-gradient-to-r from-green-400 to-blue-500">
-      <div class="lg:container lg:mx-auto h-24 mb-8 flex items-center">
-        <div class="text-3xl font-semibold text-white">SWSF Online</div>
+    <body class="bg-gray-100">
+    <div class="lg:container lg:mx-auto h-24 flex items-center justify-between p-5">
+      <div>
+        <p class="text-3xl font-semibold text-black">SWSF Online</p>
+        <span class="text-gray-600 italic text-sm">Star Wars Simming Forum</span>
+      </div>
+      <div class="space-x-2 text text-">
+        <%= link_to "Login", "" %>
+        <a class="text-base" href="#">Sign Up</a>
       </div>
     </div>
-    <div class="lg:container lg:mx-auto">
+    <main class="lg:container lg:mx-auto p-5 mt-12">
       <%= yield %>
     </div>
   </body>
