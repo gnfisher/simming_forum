@@ -1,0 +1,5 @@
+Hello <%= @user.email %>!
+
+This is your login link for SWSF Online. <%= link_to "Click here", session_url(@login_token) %> to log in.
+
+If you didn't ask for this email, disregard it!

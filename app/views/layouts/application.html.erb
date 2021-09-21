@@ -16,11 +16,21 @@
         <p class="text-3xl font-semibold text-black">SWSF Online</p>
         <span class="text-gray-600 italic text-sm">Star Wars Simming Forum</span>
       </div>
-      <div class="space-x-2 text text-">
-        <%= link_to "Login", "" %>
-        <a class="text-base" href="#">Sign Up</a>
-      </div>
+
+      <% if current_user %>
+        <div class="space-x-2 text text-">
+          <%= link_to "Sign Out", sign_out_path, method: :delete %>
+        </div>
+      <% else %>
+        <div class="space-x-2 text text-">
+          <%= link_to "Sign In", sign_in_path %>
+          <a class="text-base" href="#">Sign Up</a>
+        </div>
+      <% end %>
     </div>
+
+    <%= render "layouts/flashes" %>
+
     <main class="lg:container lg:mx-auto p-5 mt-12">
       <%= yield %>
     </div>
