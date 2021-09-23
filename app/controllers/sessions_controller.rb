@@ -10,23 +10,23 @@ class SessionsController < ApplicationController
       UserLoginLinkMailer.login_email(user: user, login_token: login_token).deliver_later
     end
 
-    render "sessions/_success"
+    redirect_to root_path, success: "Sent! Check your email for a magic link to log in."
   end
 
   def show
     token = LoginToken.active.find_by(token: params[:token])
-
+    flash.keep
     if token.present?
       session[:user_id] = token.user_id
-      redirect_to root_path, notice: "Successfully logged in."
+      redirect_to root_path, success: "Successfully logged in."
     else
-      redirect_to :new, flash[:notice] = "Please request a magic link to login."
+      redirect_to sign_in_path, notice: "Please request a magic link to login."
     end
   end
 
   def destroy
     session.delete(:user_id)
-    redirect_to root_path, notice: "Successfully logged out."
+    redirect_to root_path, success: "Successfully logged out."
   end
 
   private
