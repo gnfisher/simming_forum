@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def show
     token = LoginToken.active.find_by(token: params[:token])
-    flash.keep
+
     if token.present?
       session[:user_id] = token.user_id
       redirect_to root_path, success: "Successfully logged in."

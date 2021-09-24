@@ -9,7 +9,7 @@ RSpec.describe "User logs in", type: :system do
     fill_in "email", with: user.email
     click_button "Email Link"
 
-    expect(page).to have_content("Email sent!")
+    expect(page).to have_content("Sent!")
 
     expect {
       perform_enqueued_jobs

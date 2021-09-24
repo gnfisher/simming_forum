@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  add_flash_types :warning
+  add_flash_types :warning, :success
+
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def current_user
