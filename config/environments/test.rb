@@ -1,4 +1,5 @@
 require "active_support/core_ext/integer/time"
+require_relative "../../spec/support/sign_in_helper"
 
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
@@ -57,4 +58,6 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  config.middleware.use SignInHelper
 end
