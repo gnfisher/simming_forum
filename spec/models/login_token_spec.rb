@@ -12,8 +12,8 @@ RSpec.describe LoginToken, type: :model do
 
   context ".active" do
     it "only returns login tokens created in the last 10 minutes" do
-      active = create(:login_token, created_at: Time.now - 9.minutes)
-      inactive = create(:login_token, created_at: Time.now - 11.minutes)
+      _inactive = create(:login_token, valid_until: 1.minute.ago)
+      active = create(:login_token, valid_until: 10.minutes.from_now)
 
       result = LoginToken.active
 

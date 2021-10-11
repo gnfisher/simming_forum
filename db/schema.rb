@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_140129) do
+ActiveRecord::Schema.define(version: 2021_10_11_182040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,9 @@ ActiveRecord::Schema.define(version: 2021_09_11_140129) do
     t.text "token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "valid_until", null: false
     t.index ["user_id"], name: "index_login_tokens_on_user_id"
+    t.index ["valid_until", "token"], name: "index_login_tokens_on_valid_until_and_token"
   end
 
   create_table "users", force: :cascade do |t|
