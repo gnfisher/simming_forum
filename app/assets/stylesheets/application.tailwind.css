@@ -1,11 +1,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "./components/notifications.scss";
+@import "./components/components.css";
 
 @layer base {
   a {
     @apply text-blue-700 underline hover:text-blue-500;
   }
 }
-

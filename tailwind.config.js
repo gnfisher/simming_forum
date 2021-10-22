@@ -3,8 +3,8 @@ module.exports = {
   purge: [
     "app/views/**/*.html.erb",
     "app/helpers/**/*.rb",
-    "app/packs/**/*.scss",
-    "app/packs/**/*.css",
+    "app/javascript/**/*.scss",
+    "app/assets/stylesheets/**/*.css",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
